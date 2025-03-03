@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const auth = firebase.auth();
 
-    // Signup Function
     const signupForm = document.getElementById("signup-form");
     if (signupForm) {
         signupForm.addEventListener("submit", function (e) {
@@ -12,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
             auth.createUserWithEmailAndPassword(email, password)
                 .then((userCredential) => {
                     alert("Signup successful! Redirecting...");
-                    window.location.href = "index.html"; // Redirect to homepage
+                    window.location.href = "index.html";
                 })
                 .catch((error) => {
                     alert("Signup failed: " + error.message);
@@ -20,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Login Function
     const loginForm = document.getElementById("login-form");
     if (loginForm) {
         loginForm.addEventListener("submit", function (e) {
@@ -31,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
             auth.signInWithEmailAndPassword(email, password)
                 .then((userCredential) => {
                     alert("Login successful! Redirecting...");
-                    window.location.href = "index.html"; // Redirect to homepage
+                    window.location.href = "index.html";
                 })
                 .catch((error) => {
                     alert("Login failed: " + error.message);
